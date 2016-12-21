@@ -1,13 +1,12 @@
 package com.litecrm.entities.employee;
 
+import com.litecrm.entities.department.Department;
 import com.litecrm.entities.person.Person;
+import com.litecrm.entities.workgroup.Workgroup;
 
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by ddexster on 16.12.16.
- */
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -20,7 +19,13 @@ public class Employee {
     private Person contact;
 
     private String position;
-    private String department;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Department department;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Workgroup workgroup;
+
     private Date hireDate;
 
     public Employee() {
@@ -53,11 +58,11 @@ public class Employee {
         return this;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public Employee setDepartment(String department) {
+    public Employee setDepartment(Department department) {
         this.department = department;
         return this;
     }
@@ -68,6 +73,15 @@ public class Employee {
 
     public Employee setHireDate(Date hireDate) {
         this.hireDate = hireDate;
+        return this;
+    }
+
+    public Workgroup getWorkgroup() {
+        return workgroup;
+    }
+
+    public Employee setWorkgroup(Workgroup workgroup) {
+        this.workgroup = workgroup;
         return this;
     }
 }
