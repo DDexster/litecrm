@@ -19,8 +19,8 @@ public class Division {
     @Column(unique = true, nullable = false)
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "HEAD_ID")
+    @OneToOne(mappedBy = "division", cascade = CascadeType.ALL)
+    @JoinColumn(name = "HEAD_ID", unique = true)
     private Employee head;
 
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL)
@@ -52,6 +52,7 @@ public class Division {
     }
 
     public Division setHead(Employee head) {
+        head.setDivision(this);
         this.head = head;
         return this;
     }

@@ -1,6 +1,7 @@
 package com.litecrm.entities.client;
 
 import com.litecrm.entities.OrganisationForm;
+import com.litecrm.entities.deal.Deal;
 import com.litecrm.entities.lead.Lead;
 import com.litecrm.entities.person.Person;
 
@@ -18,7 +19,7 @@ public class Client {
     @GeneratedValue
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
     @JoinColumn(name = "HEAD_ID", nullable = false, unique = true)
     private Lead head;
 
@@ -46,8 +47,12 @@ public class Client {
 
     private String notes;
 
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date initDate;
+
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private List<Deal> deals;
 
     public Client() {
     }
@@ -181,4 +186,30 @@ public class Client {
         this.bankCode = bankCode;
         return this;
     }
+
+    public List<Deal> getDeals() {
+        return deals;
+    }
+
+    public Client setDeals(List<Deal> deals) {
+        for (Deal deal : deals) {
+            deal.setClient(this);
+        }
+        this.deals = deals;
+        return this;
+    }
+
+    public Client addDeal(Deal deal) {
+        deal.setClient(this);
+        this.deals.add(deal);
+        return this;
+    }
+
+    public Client removeDeal(Deal deal) {
+        deal.setClient(null);
+        this.deals.remove(deal);
+        return this;
+    }
+
+
 }

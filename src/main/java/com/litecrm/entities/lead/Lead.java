@@ -19,13 +19,14 @@ public class Lead {
     @GeneratedValue
     private long id;
 
-    @OneToOne
+    @OneToOne(mappedBy = "lead", cascade = CascadeType.ALL)
     @JoinColumn(name = "CONTACT_ID", unique = true)
     private Person contact;
 
     private String companyName;
     private List<String> interests = new ArrayList<>();
 
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date initiationDate;
 

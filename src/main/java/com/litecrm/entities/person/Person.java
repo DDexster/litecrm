@@ -1,6 +1,7 @@
 package com.litecrm.entities.person;
 
 import com.litecrm.entities.client.Client;
+import com.litecrm.entities.employee.Employee;
 import com.litecrm.entities.lead.Lead;
 
 import javax.persistence.*;
@@ -26,12 +27,17 @@ public class Person {
     private List<String> phones = new LinkedList<>();
     private List<String> addresses = new LinkedList<>();
 
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
     private String skype;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "LEAD_ID")
     private Lead lead;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "EMPLOYEE_ID")
+    private Employee employee;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CLIENT_ID")
@@ -166,4 +172,12 @@ public class Person {
         return this;
     }
 
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public Person setEmployee(Employee employee) {
+        this.employee = employee;
+        return this;
+    }
 }

@@ -1,8 +1,10 @@
 package com.litecrm.entities.employee;
 
 import com.litecrm.entities.department.Department;
+import com.litecrm.entities.division.Division;
 import com.litecrm.entities.person.Person;
 import com.litecrm.entities.workgroup.Workgroup;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,18 +16,24 @@ public class Employee {
     @GeneratedValue
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
     @JoinColumn(name = "CONTACT_ID", unique = true)
     private Person contact;
 
+    @Column(nullable = false)
     private String position;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Department department;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
+    private Division division;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Workgroup workgroup;
 
+    @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private Date hireDate;
 
     public Employee() {
@@ -45,6 +53,7 @@ public class Employee {
     }
 
     public Employee setContact(Person contact) {
+        contact.setEmployee(this);
         this.contact = contact;
         return this;
     }
@@ -82,6 +91,15 @@ public class Employee {
 
     public Employee setWorkgroup(Workgroup workgroup) {
         this.workgroup = workgroup;
+        return this;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public Employee setDivision(Division division) {
+        this.division = division;
         return this;
     }
 }

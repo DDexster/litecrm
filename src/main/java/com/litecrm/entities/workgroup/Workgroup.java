@@ -1,6 +1,7 @@
 package com.litecrm.entities.workgroup;
 
 import com.litecrm.entities.employee.Employee;
+import com.litecrm.entities.project.Project;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,13 +14,15 @@ public class Workgroup {
     private long id;
 
     @OneToOne(mappedBy = "workgroup", cascade = CascadeType.ALL)
-    @JoinColumn(name = "HEAD_ID")
+    @JoinColumn(name = "HEAD_ID", nullable = false, unique = true)
     private Employee head;
 
     @OneToMany
     private List<Employee> group;
 
-    private String project;
+    @OneToOne(mappedBy = "workgroup", cascade = CascadeType.ALL)
+    @JoinColumn(name = "PROJECT_ID")
+    private Project project;
 
     public Workgroup() {
     }
@@ -66,11 +69,11 @@ public class Workgroup {
         return this;
     }
 
-    public String getProject() {
+    public Project getProject() {
         return project;
     }
 
-    public Workgroup setProject(String project) {
+    public Workgroup setProject(Project project) {
         this.project = project;
         return this;
     }

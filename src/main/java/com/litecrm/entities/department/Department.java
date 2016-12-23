@@ -2,6 +2,7 @@ package com.litecrm.entities.department;
 
 import com.litecrm.entities.division.Division;
 import com.litecrm.entities.employee.Employee;
+import com.litecrm.entities.project.Project;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,6 +26,9 @@ public class Department {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Division division;
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private List<Project> projects;
 
     public Department() {
     }
@@ -53,6 +57,7 @@ public class Department {
 
     public Department setHead(Employee head) {
         head.setDepartment(this);
+        head.setDivision(this.division);
         this.head = head;
         return this;
     }
@@ -64,6 +69,7 @@ public class Department {
     public Department setWorkers(List<Employee> workers) {
         for (Employee worker : workers) {
             worker.setDepartment(this);
+            worker.setDivision(this.division);
         }
         this.workers = workers;
         return this;
@@ -71,12 +77,14 @@ public class Department {
 
     public Department addWorker(Employee employee) {
         employee.setDepartment(this);
+        employee.setDivision(this.division);
         this.workers.add(employee);
         return this;
     }
 
     public Department removeWorker(Employee employee) {
         employee.setDepartment(null);
+        employee.setDivision(null);
         this.workers.remove(employee);
         return this;
     }
@@ -89,4 +97,29 @@ public class Department {
         this.division = division;
         return this;
     }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public Department setProjects(List<Project> projects) {
+        for (Project project : projects) {
+            project.setDepartment(this);
+        }
+        this.projects = projects;
+        return this;
+    }
+
+    public Department addProject(Project project) {
+        project.setDepartment(this);
+        this.projects.add(project);
+        return this;
+    }
+
+    public Department removeProject(Project project) {
+        project.setDepartment(null);
+        this.projects.remove(project);
+        return this;
+    }
+
 }
