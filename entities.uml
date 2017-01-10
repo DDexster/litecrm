@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.litecrm.entities</OriginalElement>
+  <nodes>
+    <node x="76.23533163265307" y="620.46875">com.litecrm.entities.project</node>
+    <node x="202.98630952380955" y="519.46875">com.litecrm.entities.workgroup</node>
+    <node x="301.69776785714294" y="327.46875">com.litecrm.entities.person</node>
+    <node x="342.57276785714294" y="206.46875">com.litecrm.entities.lead</node>
+    <node x="20.5625" y="4.46875">com.litecrm.entities.deal</node>
+    <node x="130.4009566326531" y="206.46875">com.litecrm.entities.division</node>
+    <node x="188.98630952380955" y="428.46875">com.litecrm.entities.employee</node>
+    <node x="266.06562500000007" y="105.46875">com.litecrm.entities.client</node>
+    <node x="87.37693452380955" y="327.46875">com.litecrm.entities.department</node>
+    <node x="292.56562500000007" y="4.46875">com.litecrm.entities.OrganisationForm</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.litecrm.entities.project" target="com.litecrm.entities.department">
+      <point x="10.583333333333343" y="-15.5" />
+      <point x="150.31866496598641" y="600.46875" />
+      <point x="145.23533163265307" y="600.46875" />
+      <point x="145.23533163265307" y="408.46875" />
+      <point x="152.79360119047624" y="408.46875" />
+      <point x="-13.083333333333314" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.project" target="com.litecrm.entities.workgroup">
+      <point x="31.75" y="-15.5" />
+      <point x="171.48533163265307" y="590.46875" />
+      <point x="278.98630952380955" y="590.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.employee" target="com.litecrm.entities.employee">
+      <point x="-54.0" y="15.5" />
+      <point x="206.98630952380955" y="479.46875" />
+      <point x="168.98630952380955" y="479.46875" />
+      <point x="168.98630952380955" y="443.96875" />
+      <point x="-72.0" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.person" target="com.litecrm.entities.lead">
+      <point x="15.875" y="-15.5" />
+      <point x="381.07276785714294" y="307.46875" />
+      <point x="397.57276785714294" y="307.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.deal" target="com.litecrm.entities.deal">
+      <point x="-44.0" y="15.5" />
+      <point x="31.5625" y="55.46875" />
+      <point x="0.5625" y="55.46875" />
+      <point x="0.5625" y="19.96875" />
+      <point x="-55.0" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.lead" target="com.litecrm.entities.client">
+      <point x="-27.5" y="-15.5" />
+      <point x="370.07276785714294" y="186.46875" />
+      <point x="347.96562500000005" y="186.46875" />
+      <point x="23.399999999999977" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.lead" target="com.litecrm.entities.person">
+      <point x="36.66666666666663" y="15.5" />
+      <point x="434.23943452380956" y="307.46875" />
+      <point x="412.82276785714294" y="307.46875" />
+      <point x="47.625" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.department" target="com.litecrm.entities.project">
+      <point x="-39.25" y="15.5" />
+      <point x="126.62693452380955" y="408.46875" />
+      <point x="134.23533163265307" y="408.46875" />
+      <point x="134.23533163265307" y="600.46875" />
+      <point x="129.15199829931973" y="600.46875" />
+      <point x="-10.583333333333343" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.employee" target="com.litecrm.entities.department">
+      <point x="-61.71428571428572" y="-15.5" />
+      <point x="199.27202380952383" y="408.46875" />
+      <point x="178.9602678571429" y="408.46875" />
+      <point x="13.083333333333343" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.division" target="com.litecrm.entities.employee">
+      <point x="26.19999999999999" y="15.5" />
+      <point x="222.1009566326531" y="307.46875" />
+      <point x="255.08526785714292" y="307.46875" />
+      <point x="255.08526785714292" y="408.46875" />
+      <point x="260.98630952380955" y="408.46875" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.client" target="com.litecrm.entities.deal">
+      <point x="-39.0" y="-15.5" />
+      <point x="285.56562500000007" y="85.46875" />
+      <point x="97.5625" y="85.46875" />
+      <point x="22.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.workgroup" target="com.litecrm.entities.project">
+      <point x="50.666666666666686" y="15.5" />
+      <point x="329.65297619047624" y="600.46875" />
+      <point x="192.65199829931973" y="600.46875" />
+      <point x="52.91666666666666" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.project" target="com.litecrm.entities.project">
+      <point x="0.0" y="15.5" />
+      <point x="139.73533163265307" y="671.46875" />
+      <point x="56.23533163265307" y="671.46875" />
+      <point x="56.23533163265307" y="635.96875" />
+      <point x="-63.5" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.person" target="com.litecrm.entities.employee">
+      <point x="42.33333333333337" y="15.5" />
+      <point x="407.5311011904763" y="408.46875" />
+      <point x="322.7005952380953" y="408.46875" />
+      <point x="61.71428571428572" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.department" target="com.litecrm.entities.employee">
+      <point x="65.41666666666669" y="15.5" />
+      <point x="231.29360119047624" y="408.46875" />
+      <point x="240.414880952381" y="408.46875" />
+      <point x="-20.571428571428555" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.employee" target="com.litecrm.entities.person">
+      <point x="41.14285714285717" y="-15.5" />
+      <point x="302.1291666666667" y="398.46875" />
+      <point x="365.19776785714294" y="398.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.person" target="com.litecrm.entities.client">
+      <point x="-15.875" y="-15.5" />
+      <point x="349.32276785714294" y="277.46875" />
+      <point x="312.07276785714294" y="277.46875" />
+      <point x="312.07276785714294" y="186.46875" />
+      <point x="324.56562500000007" y="186.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.project" target="com.litecrm.entities.deal">
+      <point x="-31.75" y="-15.5" />
+      <point x="107.98533163265307" y="590.46875" />
+      <point x="56.87693452380955" y="590.46875" />
+      <point x="56.87693452380955" y="85.46875" />
+      <point x="75.5625" y="85.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.employee" target="com.litecrm.entities.division">
+      <point x="20.571428571428555" y="-15.5" />
+      <point x="281.5577380952381" y="408.46875" />
+      <point x="268.84895833333337" y="408.46875" />
+      <point x="268.84895833333337" y="297.46875" />
+      <point x="248.30095663265314" y="297.46875" />
+      <point x="52.400000000000006" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.division" target="com.litecrm.entities.department">
+      <point x="0.0" y="15.5" />
+      <point x="195.9009566326531" y="307.46875" />
+      <point x="205.12693452380955" y="307.46875" />
+      <point x="39.25" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.client" target="com.litecrm.entities.OrganisationForm">
+      <point x="39.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.workgroup" target="com.litecrm.entities.employee">
+      <point x="-50.66666666666666" y="-15.5" />
+      <point x="228.3196428571429" y="499.46875" />
+      <point x="242.98630952380955" y="499.46875" />
+      <point x="-18.0" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.client" target="com.litecrm.entities.client">
+      <point x="-46.8" y="15.5" />
+      <point x="277.76562500000006" y="156.46875" />
+      <point x="246.06562500000007" y="156.46875" />
+      <point x="246.06562500000007" y="120.96875" />
+      <point x="-58.5" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.deal" target="com.litecrm.entities.client">
+      <point x="44.0" y="15.5" />
+      <point x="119.5625" y="75.46875" />
+      <point x="324.56562500000007" y="75.46875" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.workgroup" target="com.litecrm.entities.workgroup">
+      <point x="-50.666666666666664" y="15.5" />
+      <point x="228.3196428571429" y="570.46875" />
+      <point x="182.98630952380955" y="570.46875" />
+      <point x="182.98630952380955" y="534.96875" />
+      <point x="-76.0" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.client" target="com.litecrm.entities.lead">
+      <point x="46.799999999999955" y="15.5" />
+      <point x="371.365625" y="176.46875" />
+      <point x="425.07276785714294" y="176.46875" />
+      <point x="27.5" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.division" target="com.litecrm.entities.division">
+      <point x="-52.4" y="15.5" />
+      <point x="143.50095663265313" y="257.46875" />
+      <point x="110.40095663265312" y="257.46875" />
+      <point x="110.40095663265312" y="221.96875" />
+      <point x="-65.5" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.deal" target="com.litecrm.entities.project">
+      <point x="-22.0" y="15.5" />
+      <point x="53.5625" y="75.46875" />
+      <point x="45.87693452380955" y="75.46875" />
+      <point x="45.87693452380955" y="600.46875" />
+      <point x="86.8186649659864" y="600.46875" />
+      <point x="-52.91666666666667" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.employee" target="com.litecrm.entities.workgroup">
+      <point x="54.0" y="15.5" />
+      <point x="314.98630952380955" y="499.46875" />
+      <point x="329.65297619047624" y="499.46875" />
+      <point x="50.666666666666686" y="-15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.department" target="com.litecrm.entities.department">
+      <point x="-65.41666666666667" y="15.5" />
+      <point x="100.46026785714288" y="378.46875" />
+      <point x="67.37693452380955" y="378.46875" />
+      <point x="67.37693452380955" y="342.96875" />
+      <point x="-78.5" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.department" target="com.litecrm.entities.division">
+      <point x="-39.25" y="-15.5" />
+      <point x="126.62693452380955" y="307.46875" />
+      <point x="169.70095663265312" y="307.46875" />
+      <point x="-26.19999999999999" y="15.5" />
+    </edge>
+    <edge source="com.litecrm.entities.person" target="com.litecrm.entities.person">
+      <point x="-42.33333333333334" y="15.5" />
+      <point x="322.86443452380956" y="378.46875" />
+      <point x="281.69776785714294" y="378.46875" />
+      <point x="281.69776785714294" y="342.96875" />
+      <point x="-63.5" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.lead" target="com.litecrm.entities.lead">
+      <point x="-36.66666666666666" y="15.5" />
+      <point x="360.9061011904763" y="257.46875" />
+      <point x="322.57276785714294" y="257.46875" />
+      <point x="322.57276785714294" y="221.96875" />
+      <point x="-55.0" y="-0.0" />
+    </edge>
+    <edge source="com.litecrm.entities.client" target="com.litecrm.entities.person">
+      <point x="-23.399999999999977" y="15.5" />
+      <point x="301.1656250000001" y="186.46875" />
+      <point x="271.9009566326531" y="186.46875" />
+      <point x="271.9009566326531" y="287.46875" />
+      <point x="317.57276785714294" y="287.46875" />
+      <point x="-47.625" y="-15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8045977011494253" x="226.5" y="338.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

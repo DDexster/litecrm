@@ -29,6 +29,7 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Person> contacts;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrganisationForm form;
 
