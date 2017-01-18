@@ -2,6 +2,7 @@ package com.litecrm.entities.division;
 
 import com.litecrm.entities.department.Department;
 import com.litecrm.entities.employee.Employee;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,6 +26,9 @@ public class Division {
 
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL)
     private List<Department> departments;
+
+    private CustomUser createdBy;
+
 
     public Division() {
     }
@@ -78,6 +82,15 @@ public class Division {
     public Division removeDepartment(Department department) {
         department.setDivision(null);
         this.departments.remove(department);
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Division setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }

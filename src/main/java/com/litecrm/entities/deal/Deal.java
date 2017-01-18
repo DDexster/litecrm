@@ -2,6 +2,7 @@ package com.litecrm.entities.deal;
 
 import com.litecrm.entities.client.Client;
 import com.litecrm.entities.project.Project;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -31,7 +32,18 @@ public class Deal {
     @Column(nullable = false)
     private Date endDate = project.getEndDate();
 
+    private CustomUser createdBy;
+
     public Deal() {
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Deal setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
+        return this;
     }
 
     public long getId() {

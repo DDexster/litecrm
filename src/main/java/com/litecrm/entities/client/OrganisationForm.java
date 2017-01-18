@@ -1,4 +1,4 @@
-package com.litecrm.entities;
+package com.litecrm.entities.client;
 
 /**
  * Created by ddexster on 16.12.16.

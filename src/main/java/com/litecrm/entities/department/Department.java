@@ -3,6 +3,7 @@ package com.litecrm.entities.department;
 import com.litecrm.entities.division.Division;
 import com.litecrm.entities.employee.Employee;
 import com.litecrm.entities.project.Project;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.List;
@@ -30,7 +31,18 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Project> projects;
 
+    private CustomUser createdBy;
+
     public Department() {
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Department setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
+        return this;
     }
 
     public long getId() {

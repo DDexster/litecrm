@@ -4,7 +4,7 @@ import com.litecrm.entities.department.Department;
 import com.litecrm.entities.division.Division;
 import com.litecrm.entities.person.Person;
 import com.litecrm.entities.workgroup.Workgroup;
-import org.springframework.dao.DataIntegrityViolationException;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -35,6 +35,9 @@ public class Employee {
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
     private Date hireDate;
+
+    private CustomUser createdBy;
+
 
     public Employee() {
     }
@@ -100,6 +103,15 @@ public class Employee {
 
     public Employee setDivision(Division division) {
         this.division = division;
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Employee setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }

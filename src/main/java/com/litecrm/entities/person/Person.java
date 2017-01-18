@@ -3,6 +3,7 @@ package com.litecrm.entities.person;
 import com.litecrm.entities.client.Client;
 import com.litecrm.entities.employee.Employee;
 import com.litecrm.entities.lead.Lead;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -42,6 +43,8 @@ public class Person {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CLIENT_ID")
     private Client client;
+
+    private CustomUser createdBy;
 
     public Person() {
     }
@@ -178,6 +181,20 @@ public class Person {
 
     public Person setEmployee(Employee employee) {
         this.employee = employee;
+        return this;
+    }
+
+    public Person setId(long id) {
+        this.id = id;
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Person setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }

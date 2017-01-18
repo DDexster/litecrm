@@ -3,6 +3,7 @@ package com.litecrm.entities.project;
 import com.litecrm.entities.deal.Deal;
 import com.litecrm.entities.department.Department;
 import com.litecrm.entities.workgroup.Workgroup;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -40,6 +41,8 @@ public class Project {
     @OneToOne(mappedBy = "project", cascade = CascadeType.PERSIST)
     @JoinColumn(name = "DEAL_ID")
     private Deal deal;
+
+    private CustomUser createdBy;
 
     public Project() {
     }
@@ -106,6 +109,24 @@ public class Project {
 
     public Project setEndDate(Date endDate) {
         this.endDate = endDate;
+        return this;
+    }
+
+    public Deal getDeal() {
+        return deal;
+    }
+
+    public Project setDeal(Deal deal) {
+        this.deal = deal;
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Project setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }

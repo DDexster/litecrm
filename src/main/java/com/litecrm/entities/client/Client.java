@@ -1,17 +1,14 @@
 package com.litecrm.entities.client;
 
-import com.litecrm.entities.OrganisationForm;
 import com.litecrm.entities.deal.Deal;
 import com.litecrm.entities.lead.Lead;
 import com.litecrm.entities.person.Person;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by ddexster on 16.12.16.
- */
 @Entity
 @Table(name = "clients")
 public class Client {
@@ -55,9 +52,19 @@ public class Client {
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Deal> deals;
 
+    private CustomUser createdBy;
+
     public Client() {
     }
 
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Client setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
 
     public long getId() {
         return id;

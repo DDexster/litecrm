@@ -3,6 +3,7 @@ package com.litecrm.security.userdb;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class CustomUser {
 
     @Id

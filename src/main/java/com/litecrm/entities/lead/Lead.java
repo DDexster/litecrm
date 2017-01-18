@@ -2,6 +2,7 @@ package com.litecrm.entities.lead;
 
 import com.litecrm.entities.client.Client;
 import com.litecrm.entities.person.Person;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -32,6 +33,9 @@ public class Lead {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     private Client client;
+
+    private CustomUser createdBy;
+
 
     public Lead() {
     }
@@ -95,6 +99,20 @@ public class Lead {
 
     public Lead setClient(Client client) {
         this.client = client;
+        return this;
+    }
+
+    public Lead setId(long id) {
+        this.id = id;
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Lead setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }

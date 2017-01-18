@@ -2,6 +2,7 @@ package com.litecrm.entities.workgroup;
 
 import com.litecrm.entities.employee.Employee;
 import com.litecrm.entities.project.Project;
+import com.litecrm.security.userdb.CustomUser;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +24,9 @@ public class Workgroup {
     @OneToOne(mappedBy = "workgroup", cascade = CascadeType.ALL)
     @JoinColumn(name = "PROJECT_ID")
     private Project project;
+
+    private CustomUser createdBy;
+
 
     public Workgroup() {
     }
@@ -75,6 +79,15 @@ public class Workgroup {
 
     public Workgroup setProject(Project project) {
         this.project = project;
+        return this;
+    }
+
+    public CustomUser getCreatedBy() {
+        return createdBy;
+    }
+
+    public Workgroup setCreatedBy(CustomUser createdBy) {
+        this.createdBy = createdBy;
         return this;
     }
 }
