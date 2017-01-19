@@ -2,28 +2,16 @@ h3 {
     font-family: Overpass, Roboto, SansSerif, "Noto Mono";
     margin: 0px;
     margin-top: 5px;
-    /*font-size: x-large;*/
-    /*padding-left: 16px;*/
 }
-
 img {
-    /*background-size: auto;*/
+    margin: 10px;
 }
 .navbar {
     background-color: #ABD1E3;
-    /*height: 15%;*/
-    /*background-color: #B4AFE4;*/
 }
 
-
-.navbar .navbar-header {
-    margin-bottom: 0px;
-}
-
-.navbar-right {
+div .navbar-nav {
     margin: 15px;
 }
 
-/*.navbar-right .fa-bars {*/
-    /*color: black;*/
-/*}*/
+

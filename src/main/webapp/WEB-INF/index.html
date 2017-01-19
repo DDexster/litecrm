@@ -9,37 +9,34 @@
     <link rel="stylesheet" href="css/header.style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
 
+    <script src="./js/angular.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
 </head>
-<body>
-<!--Header component start-->
-<nav class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="navbar navbar-header">
-                <a href="#"><img src="./images/logo.png" height="60px"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <div class="navbar-text hidden-xs">
-                    <h3>Some simple CRM online</h3>
-                </div>
-                <div class="navbar-btn navbar-right">
-                    <a href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-<!--Header component end-->
+<body ng-app="CRM">
+
+<header-app info="app"></header-app>
+
+
+<footer-app info="app"></footer-app>
+
+<!--Scripts-->
 
 <script src="./js/jquery.js"></script>
 <script src="./js/bootstrap.js"></script>
+
+<!--Application-->
+
+<script src="./js/app/app.js"></script>
+
+<!--Directives-->
+
+<script src="./js/app/directives/header.js"></script>
+<script src="./js/app/directives/footer.js"></script>
+
 </body>
 </html>
