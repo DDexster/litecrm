@@ -7,3 +7,9 @@ app.controller('AuthController', function () {
         this.user = user;
     }
 });
+app.controller('RegisterCtrl', function () {
+    this.user = null;
+    this.setUser = function (user) {
+        this.user = user;
+    }
+})

@@ -11,15 +11,13 @@ public class CustomUser {
     private long id;
 
     @Column(nullable = false)
-    private String login;
+    private String email;
     @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @Column(nullable = false)
-    private String email;
 
     @Column(nullable = false)
     private String phone;
@@ -40,15 +38,6 @@ public class CustomUser {
 
     public CustomUser setId(long id) {
         this.id = id;
-        return this;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public CustomUser setLogin(String login) {
-        this.login = login;
         return this;
     }
 
