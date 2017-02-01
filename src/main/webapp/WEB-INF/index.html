@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="CRM">
+
 <head>
     <meta charset="UTF-8">
     <title>easyCRM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="css/header.style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-
+    <link rel="stylesheet" href="css/custom-styles.css">
     <script src="./js/angular.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,26 +18,61 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-app="CRM">
 
-<header-app info="app"></header-app>
+<body>
+<!--Header-->
+<header-app></header-app>
+<!--Header-->
 
+<sidebutton></sidebutton>
 
-<footer-app info="app"></footer-app>
+<!--LoginForm-->
+<div class="container">
+    <div class="row">
+        <form name="loginForm" class="form-horizontal cs-login col-md-offset-4 col-sm-offset-3 col-xs-offset-1"
+              ng-controller="AuthController as auth" ng-submit="loginForm.$valid && auth.getUser(user)" novalidate>
+            <h1 ng-style="{'font-family':'Indie Flower', 'font-size':'52px'}">Please, sign in:</h1>
 
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-1 control-label cs-label">E-mail</label>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="inputEmail" ng-model="auth.user.email"
+                           placeholder="E-mail" required></div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-3 control-label cs-label">Password</label>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="inputPassword" ng-model="auth.user.pass"
+                           placeholder="Password" required></div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-success pull-left" value="/register">Register</button>
+                    <button type="submit" class="btn btn-info pull-right" value="Submit"
+                            ng-disabled="loginForm.$invalid">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--LoginForm-->
+<!--Footer-->
+<footer-app></footer-app>
+<!--Footer-->
 <!--Scripts-->
-
 <script src="./js/jquery.js"></script>
 <script src="./js/bootstrap.js"></script>
-
 <!--Application-->
-
 <script src="./js/app/app.js"></script>
-
+<!--<script src="./js/customJQuery.js"></script>-->
 <!--Directives-->
-
 <script src="./js/app/directives/header.js"></script>
 <script src="./js/app/directives/footer.js"></script>
+<script src="./js/app/directives/sidebutton.js"></script>
+
 
 </body>
+
 </html>

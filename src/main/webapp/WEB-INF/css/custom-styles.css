@@ -1,0 +1,59 @@
+h3 {
+    font-family: Overpass, Roboto, SansSerif, "Noto Mono";
+    margin: 0px;
+    margin-top: 5px;
+}
+
+img {
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #ABD1E3;
+}
+
+div .navbar-nav {
+    margin: 15px;
+}
+
+.custom-footer {
+    clear: both;
+}
+
+.cs-header {
+    margin-bottom: -20px;
+}
+
+.sidebar {
+    margin-top: -120px;
+    top: 50%;
+    position: absolute;
+    left: -70px;
+
+}
+
+.side-button {
+    height: 80px;
+}
+
+.cs-login {
+    position: absolute;
+    margin-top: -154px;
+    /*margin-left: -120px;*/
+    top: 50%;
+    /*left: 50%;*/
+}
+
+.cs-label {
+    padding-bottom: 10px;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+
