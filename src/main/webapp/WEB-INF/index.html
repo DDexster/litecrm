@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>easyCRM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/tether.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/custom-styles.css">
     <script src="./js/angular.js"></script>
@@ -20,94 +24,39 @@
 </head>
 
 <body>
-<!--Header-->
-<header-app></header-app>
-<!--Header-->
-<!--SideBar-->
-<sidebutton></sidebutton>
-<!--SideBar-->
+<div class="container-fluid">
+    <!--Header-->
+    <header-app></header-app>
+    <!--Header-->
+    <!--SideBar-->
+    <sidebutton></sidebutton>
+    <!--SideBar-->
 
-<!--Login form-->
-<!--<login-form></login-form>-->
-<!--Login form-->
+    <!--Login form-->
+    <!--<login-form></login-form>-->
+    <!--Login form-->
 
-<!--Register form-->
-<div class="container">
-    <div class="row">
-        <h1 ng-style="{'font-family':'Indie Flower', 'font-size':'52px'}">Registration form:</h1>
-        <form name="registrationForm" class="form-group col-xs-offset-1 col-sm-offset-1 col-md-offset-2 cs-register"
-              ng-controller="RegisterCtrl as regCtrl" ng-submit="registrationForm.$valid && regCtrl.getUser(user)"
-              novalidate>
-            <div class="form-group">
-                <label for="inputRegEmail" class="col-lg-1 control-label">E-mail *</label>
-                <div class="col-sm-12">
-                    <input type="email" class="form-control" id="inputRegEmail" ng-model="regCtrl.user.email"
-                           placeholder="E-mail" required></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegName" class="col-lg-2 control-label">First Name *</label>
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputRegName" ng-model="regCtrl.user.firstName"
-                           placeholder="First Name" required></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegSurname" class="col-lg-2 control-label">Last Name *</label>
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputRegSurname" ng-model="regCtrl.user.lastName"
-                           placeholder="Last Name" required></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegCompany" class="col-lg-3 control-label">Your Company Name*</label>
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputRegCompany" ng-model="regCtrl.user.company"
-                           placeholder="Company Name" required></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegPhone" class="col-lg-3 control-label">Your Phone Number</label>
-                <div class="col-sm-12">
-                    <input type="tel" class="form-control" id="inputRegPhone" ng-model="regCtrl.user.phone"
-                           placeholder="Phone Number"></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegCountry" class="col-lg-2 control-label">Your Country</label>
-                <div class="col-sm-12">
-                    <input type="tel" class="form-control" id="inputRegCountry" ng-model="regCtrl.user.country"
-                           placeholder="Country"></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegPass" class="col-lg-2 control-label">Password *</label>
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="inputRegPass" ng-model="regCtrl.user.password"
-                           placeholder="Password" required></div>
-            </div>
-            <div class="form-group">
-                <label for="inputRegPass1" class="col-lg-3 control-label">Confirm Password *</label>
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="inputRegPass1"
-                           placeholder="Password" ng-model="regCtrl.user.password" required></div>
-            </div>
-            <div class="form-group">
+    <!--Register form-->
+    <register></register>
+    <!--Register form-->
 
-            </div>
-        </form>
-    </div>
+    <!--Footer-->
+    <footer-app></footer-app>
+    <!--Footer-->
 </div>
-<!--Register form-->
-
-<!--Footer-->
-<footer-app></footer-app>
-<!--Footer-->
 <!--Scripts-->
 <script src="./js/jquery.js"></script>
+<script src="./js/tether.js"></script>
 <script src="./js/bootstrap.js"></script>
 <!--Application-->
 <script src="./js/app/app.js"></script>
 <!--<script src="./js/customJQuery.js"></script>-->
 <!--Directives-->
 <script src="./js/app/directives/header.js"></script>
-<script src="./js/app/directives/footer.js"></script>
 <script src="./js/app/directives/sidebutton.js"></script>
 <script src="./js/app/directives/loginform.js"></script>
+<script src="./js/app/directives/registration.js"></script>
+<script src="./js/app/directives/footer.js"></script>
 
 
 </body>

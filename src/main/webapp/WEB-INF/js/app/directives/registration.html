@@ -1,0 +1,70 @@
+<div class="row">
+    <h1 class="heading col-12">Registration form:</h1>
+    <form name="registrationForm" class="align-content-center form-horizontal cs-login offset-md-4 col-md-4
+        offset-sm-3 col-sm-5 offset-1 col-9 offset-xl-4 col-xl-4 cs-register"
+          ng-controller="RegisterCtrl as regCtrl" ng-submit="registrationForm.$valid && regCtrl.setUser(user)"
+          novalidate>
+        <div class="form-group">
+            <label for="inputRegEmail" class="col-sm-12 form-control-label cs-label">E-mail *</label>
+            <div class="col-sm-12">
+                <input type="email" class="form-control" id="inputRegEmail" ng-model="regCtrl.user.email"
+                       placeholder="E-mail" required></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegName" class="col-sm-12 form-control-label cs-label">First Name *</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="inputRegName" ng-model="regCtrl.user.firstName"
+                       placeholder="First Name" required></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegSurname" class="col-sm-12 form-control-label cs-label">Last Name *</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="inputRegSurname" ng-model="regCtrl.user.lastName"
+                       placeholder="Last Name" required></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegCompany" class="col-sm-12 form-control-label cs-label">Your Company Name*</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="inputRegCompany" ng-model="regCtrl.user.company"
+                       placeholder="Company Name" required></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegPhone" class="col-sm-12 form-control-label cs-label">Your Phone Number</label>
+            <div class="col-sm-12">
+                <input type="tel" class="form-control" id="inputRegPhone" ng-model="regCtrl.user.phone"
+                       placeholder="(XXX)XXX-XX-XX"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegCountry" class="col-sm-12 form-control-label cs-label">Your Country</label>
+            <div class="col-sm-12">
+                <input type="tel" class="form-control" id="inputRegCountry" ng-model="regCtrl.user.country"
+                       placeholder="Country"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegPass" class="col-sm-12 form-control-label cs-label">Password *</label>
+            <div class="col-sm-12">
+                <input type="password" name="password" class="form-control" id="inputRegPass"
+                       ng-model="regCtrl.user.password"
+                       placeholder="Password" required pass-verify="regCtrl.user.password_verify"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegPass1" class="col-sm-12 form-control-label cs-label">Confirm Password *</label>
+            <div class="col-sm-12">
+                <input type="password" name="confirm_password" class="form-control" id="inputRegPass1"
+                       placeholder="Confirm Password" ng-model="regCtrl.user.password_verify"
+                       pass-verify="regCtrl.user.password_verify" required></div>
+            <div class="col-sm-12 text-danger" ng-hide="registrationForm.confirm_password.$error.">
+                Passwords have to match
+            </div>
+            <div class="col-sm-12 text-success" ng-show="">
+                Passwords are matching!
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success pull-right" style="margin: 10px" value="Submit"
+                    ng-disabled="registrationForm.$invalid">
+                Register
+            </button>
+        </div>
+    </form>
+</div>

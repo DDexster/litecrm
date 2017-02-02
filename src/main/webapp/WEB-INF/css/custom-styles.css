@@ -4,48 +4,56 @@ h3 {
     margin-top: 5px;
 }
 
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
 img {
     margin: 10px;
 }
 
-.navbar {
+.navbar, .cs-footer {
     background-color: #ABD1E3;
+}
+
+.cs-footer {
+    height: 60px;
+    padding: 15px 0 0 0;
+    position: fixed;
+    display: block;
+    clear: inherit;
+    bottom: 0;
 }
 
 div .navbar-nav {
     margin: 15px;
 }
 
-.custom-footer {
-    clear: both;
-}
-
 .cs-header {
     margin-bottom: -20px;
+    height: 60px;
+    width: 100%;
 }
 
 .sidebar {
     margin-top: -120px;
     top: 50%;
-    position: absolute;
+    position: fixed;
     left: -70px;
-
 }
 
 .side-button {
     height: 80px;
 }
 
-.cs-login {
-    position: absolute;
-    margin-top: -154px;
-    /*margin-left: -120px;*/
-    top: 50%;
-    /*left: 50%;*/
+.heading {
+    font-family: Indie Flower, Overpass, sans-serif;
+    font-size: 52px
 }
 
 .cs-label {
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
+    font-size: 14px;
 }
 
 .ng-invalid.ng-dirty {
@@ -56,4 +64,14 @@ div .navbar-nav {
     border-color: #78FA89;
 }
 
+.cs-register {
+    margin-bottom: 60px;
+}
 
+.cs-login {
+    /*display: flex;*/
+}
+
+div .form-group .form-control-label {
+    padding-top: 5px;
+}
