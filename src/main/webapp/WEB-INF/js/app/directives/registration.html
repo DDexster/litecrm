@@ -1,9 +1,8 @@
 <div class="row">
     <h1 class="heading col-12">Registration form:</h1>
     <form name="registrationForm" class="align-content-center form-horizontal cs-login offset-md-4 col-md-4
-        offset-sm-3 col-sm-5 offset-1 col-9 offset-xl-4 col-xl-4 cs-register"
-          ng-controller="RegisterCtrl as regCtrl" ng-submit="registrationForm.$valid && regCtrl.setUser(user)"
-          novalidate>
+        offset-sm-3 col-sm-5 offset-1 col-6 offset-xl-4 col-xl-4 cs-register"
+          ng-controller="RegisterCtrl as regCtrl" ng-submit="regCtrl.setUser(user)" novalidate>
         <div class="form-group">
             <label for="inputRegEmail" class="col-sm-12 form-control-label cs-label">E-mail *</label>
             <div class="col-sm-12">
@@ -45,22 +44,25 @@
             <div class="col-sm-12">
                 <input type="password" name="password" class="form-control" id="inputRegPass"
                        ng-model="regCtrl.user.password"
-                       placeholder="Password" required pass-verify="regCtrl.user.password_verify"></div>
+                       placeholder="Password" required></div>
         </div>
         <div class="form-group">
             <label for="inputRegPass1" class="col-sm-12 form-control-label cs-label">Confirm Password *</label>
             <div class="col-sm-12">
                 <input type="password" name="confirm_password" class="form-control" id="inputRegPass1"
                        placeholder="Confirm Password" ng-model="regCtrl.user.password_verify"
-                       pass-verify="regCtrl.user.password_verify" required></div>
-            <div class="col-sm-12 text-danger" ng-hide="registrationForm.confirm_password.$error.">
+                       compare-to="regCtrl.user.password" required></div>
+            <div class="col-sm-12 small text-danger" ng-hide="registrationForm.confirm_password.$valid">
                 Passwords have to match
             </div>
-            <div class="col-sm-12 text-success" ng-show="">
+            <div class="col-sm-12 small text-success" ng-show="registrationForm.confirm_password.$valid">
                 Passwords are matching!
             </div>
         </div>
         <div class="form-group">
+            <button type="button" class="btn btn-link pull-left" style="margin: 10px" value="/login">
+                Sign In
+            </button>
             <button type="submit" class="btn btn-success pull-right" style="margin: 10px" value="Submit"
                     ng-disabled="registrationForm.$invalid">
                 Register

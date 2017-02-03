@@ -1,0 +1,41 @@
+<div class="row" ng-controller="AuthController as auth">
+    <h1 class="heading col-12">{{auth.user.lastName}} {{auth.user.firstName}}:</h1>
+    <form name="profileForm" class="cs-register col-12">
+        <div class="form-group row offset-sm-1">
+            <label for="profFName" class="col-form-label col-2">First Name:</label>
+            <input id="profFName" type="text" class="form-control col-6" ng-model="auth.user.firstName"
+                   placeholder="{{auth.user.firstName}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profLName" class="col-form-label col-2">Last Name:</label>
+            <input id="profLName" type="text" class="form-control col-6" ng-model="auth.user.lastName"
+                   placeholder="{{auth.user.lastName}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profEmail" class="col-form-label col-2">Email:</label>
+            <input id="profEmail" type="email" class="form-control col-6" ng-model="auth.user.email"
+                   placeholder="{{auth.user.firstName}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profPhone" class="col-form-label col-2">Phone:</label>
+            <input id="profPhone" type="tel" class="form-control col-6" ng-model="auth.user.phone"
+                   placeholder="{{auth.user.phone}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profComp" class="col-form-label col-2">Company:</label>
+            <input id="profComp" type="text" class="form-control col-6" ng-model="auth.user.company"
+                   placeholder="{{auth.user.company}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profCountry" class="col-form-label col-2">Country:</label>
+            <input id="profCountry" type="text" class="form-control col-6" ng-model="auth.user.country"
+                   placeholder="{{auth.user.country}}">
+        </div>
+        <div class="form-group row offset-sm-1">
+            <label for="profPass" class="col-form-label col-2">Password:</label>
+            <button id="profPass" type="button" class="btn" data-toggle="model" data-target="#passChange">Change
+                Password
+            </button>
+        </div>
+    </form>
+</div>

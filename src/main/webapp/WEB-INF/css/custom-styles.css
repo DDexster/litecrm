@@ -1,7 +1,5 @@
-h3 {
+h4 {
     font-family: Overpass, Roboto, SansSerif, "Noto Mono";
-    margin: 0px;
-    margin-top: 5px;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
@@ -18,32 +16,42 @@ img {
 
 .cs-footer {
     height: 60px;
-    padding: 15px 0 0 0;
+    /*padding: 12px 0 0 0;*/
     position: fixed;
     display: block;
     clear: inherit;
     bottom: 0;
+    width: 100%;
 }
+
 
 div .navbar-nav {
     margin: 15px;
 }
 
 .cs-header {
-    margin-bottom: -20px;
     height: 60px;
     width: 100%;
+    padding: 0;
 }
 
 .sidebar {
     margin-top: -120px;
     top: 50%;
     position: fixed;
-    left: -70px;
+    left: -67px;
 }
 
 .side-button {
     height: 80px;
+    background-color: #337ab7;
+    border-color: #2e6da4;;
+
+}
+
+.header-dropdown {
+    position: relative;
+    border-color: gray;
 }
 
 .heading {
@@ -52,7 +60,6 @@ div .navbar-nav {
 }
 
 .cs-label {
-    /*padding-bottom: 10px;*/
     font-size: 14px;
 }
 
@@ -66,10 +73,6 @@ div .navbar-nav {
 
 .cs-register {
     margin-bottom: 60px;
-}
-
-.cs-login {
-    /*display: flex;*/
 }
 
 div .form-group .form-control-label {
